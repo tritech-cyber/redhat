@@ -1,0 +1,51 @@
+https://devconnected.com/how-to-install-apache-on-centos-8/
+
+Table of Contents
+
+    Prerequisites
+    Installing Apache on CentOS 8
+    Start the Apache Web Server
+    Test your Apache Web Server
+    Configuring your CentOS 8 firewall for Apache
+    Manage your Apache Web Server on CentOS 8
+    Creating Virtual Hosts for the Apache Web Server
+        Create the domain folders
+        Create your first HTML page
+        Creating a virtual host file on CentOS 8
+        Update your SELinux firewall rules
+        Restart your Apache server
+    Conclusion
+
+sudo systemctl status firewalld
+
+sudo dnf update
+sudo dnf install httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+hostname -I | awk '{print $1}'
+
+$ sudo firewall-cmd --permanent --zone=public --add-service=http
+$ sudo firewall-cmd --permanent --zone=public --add-service=https
+$ sudo firewall-cmd --reload
+
+sudo firewall-cmd --list-all | grep services
+
+services : cockpit dhcpv6-client http https ssh
+
+Now that your folders are created, edit your default Apache configuration and find the following line.
+
+$ sudo vi /etc/httpd/conf/httpd.conf
+
+# Load config files in the "/etc/httpd/conf.d" directory if any
+IncludeOptional conf.d/*.conf
+replace with 
+IncludeOptional sites-enabled/*.conf
+
+<VirtualHost *:80>
+    ServerName website.com
+    ServerAlias www.website.com
+    DocumentRoot /var/www/website.com/html
+    ErrorLog /var/www/website.com/log/error.log
+    CustomLog /var/www/website.com/log/requests.log combined
+</VirtualHost>

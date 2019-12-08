@@ -1,0 +1,4 @@
+dnf module install php
+dnf module install php:7.2/common
+systemctl restart httpd.service
+systemctl restart php-fpm.service 

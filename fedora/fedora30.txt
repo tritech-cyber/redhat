@@ -1,0 +1,18 @@
+
+Installed fedora core 30 on virtual box and metal.
+8GB ram VM
+#gnome
+
+update:
+dnf update 
+dnf group install gnome
+dnf group install gnome*
+
+
+notes:
+dnf list installed "kernel*"
+
+#mariadb
+https://fedoraproject.org/wiki/MariaDB
+
+

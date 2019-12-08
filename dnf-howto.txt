@@ -1,0 +1,17 @@
+https://www.howtoforge.com/centos-8-package-management-with-dnf-on-the-command-line/
+https://www.howtoforge.com/centos-8-package-management-with-dnf-on-the-command-line/
+
+
+dnf check-update
+dnf grouplist
+dnf groupinstall 'System Tools'
+dnf groupupdate 'System Tools'
+dnf repolist all
+
+dnf remove httpd
+
+Next, remove unwanted dependencies installed with the package httpd by running the following command:
+
+dnf autoremove
+
+

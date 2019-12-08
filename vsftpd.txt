@@ -1,0 +1,36 @@
+cwcoleman
+!!! THIS IS ONLY FOR TESTING !!!
+!!! VSFTP CAN BE SECURED MORE THAN THIS !!!
+After installation open /etc/vsftpd.conf file and make changes as follows.
+Uncomment the following lines.
+write_enable=YES
+local_umask=022
+chroot_local_user=YES
+
+!!add the following line at the end after chroot_local_user=YES
+allow_writeable_chroot=YES
+
+# Add the following lines to enable passive mode.
+pasv_enable=Yes
+pasv_min_port=40000
+pasv_max_port=40100
+
+#notes https://searchnetworking.techtarget.com/definition/passive-FTP
+#passive FTP
+#Posted by: Margaret Rouse
+#WhatIs.com
+
+Passive FTP (sometimes referred to as PASV FTP because it involves 
+the FTP PASV command) is a more secure form of data transfer in which 
+the flow of data is set up and initiated by the File Transfer Program (FTP) client 
+rather than by the FTP server program. Separate FTP client programs, such as WS_FTP Pro, 
+usually allow the user to select passive FTP. 
+Most Web browsers (which act as FTP clients) use passive FTP by default 
+because corporations prefer it as a safety measure. As a general rule, 
+any coprorate firewall server, which exists in order to protect an 
+internal network from the outside world, recognizes input from the 
+outside only in response to user requests that were sent out 
+requesting the input. 
+The use of passive FTP ensures all data flow initiation comes 
+from inside the network rather than from the outside.
+

@@ -1,0 +1,13 @@
+dnf install httpd
+# systemctl enable httpd
+# systemctl start httpd
+# firewall-cmd --zone=public --permanent --add-service=http
+# firewall-cmd --zone=public --permanent --add-service=https
+
+ firewall-cmd --add-service=http --permanent
+# firewall-cmd --reload
+
+
+ firewall-cmd --add-service=http --permanent
+
+ firewall-cmd --add-service=https --permanent

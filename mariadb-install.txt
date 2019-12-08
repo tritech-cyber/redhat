@@ -1,0 +1,18 @@
+mariadb
+
+
+#dnf install mariadb-server
+# systemctl enable mariadb.service
+$ sudo systemctl stop mariadb.service
+$ sudo systemctl start mariadb.service
+$ sudo systemctl restart mariadb.service
+$ sudo systemctl status mariadb.service
+
+sudo mysql_secure_installation
+
+mysql -u root -p 
+
+CREATE DATABASE stream;
+
+grant all privileges on stream.* TO 'nameofuser'@'localhost' IDENTIFIED BY 'password'; 
+
