@@ -1,0 +1,5 @@
+[cwc@localhost ~]$ sudo -i
+[root@localhost ~]# cd /home/
+[root@localhost home]# mkdir http
+[root@localhost home]# chown cwc:cwc /home/http/
+
