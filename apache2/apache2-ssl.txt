@@ -1,0 +1,24 @@
+https://linuxconfig.org/how-to-install-mod-ssl-on-redhat-8
+
+openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/httpd.key -x509 -days 365 -out /etc/pki/tls/certs/httpd.crt
+
+ls -l /etc/pki/tls/private/httpd.key /etc/pki/tls/certs/httpd.crt
+
+/etc/httpd/conf.d/ssl.conf file with administrative privileges and change the following lines:
+
+FROM:
+SSLCertificateFile /etc/pki/tls/certs/localhost.crt
+SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+TO:
+SSLCertificateFile /etc/pki/tls/certs/httpd.crt
+SSLCertificateKeyFile /etc/pki/tls/private/httpd.key
+
+
+As an optional step redirect all HTTP traffic to HTTPS.
+
+T do so create a new file /etc/httpd/conf.d/redirect_http.conf with a following content:
+
+<VirtualHost _default_:80>
+        Servername rhel8
+        Redirect permanent / https://rhel8/
+</VirtualHost>
