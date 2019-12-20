@@ -1,0 +1,7 @@
+Download .tar.gz 
+https://wordpress.org/
+
+Login to mariabd
+sudo mysql -u root -p; 
+create database wordpress;
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost' IDENTIFIED BY 'password';
