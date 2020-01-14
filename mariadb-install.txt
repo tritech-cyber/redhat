@@ -1,7 +1,9 @@
 mariadb
 
 
-#dnf install mariadb-server
+dnf install mariadb-server
+dnf install php-mysqlnd
+
 # systemctl enable mariadb.service
 $ sudo systemctl stop mariadb.service
 $ sudo systemctl start mariadb.service
