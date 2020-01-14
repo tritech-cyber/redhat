@@ -1,5 +1,6 @@
 [cwc@localhost ~]$ sudo -i
 [root@localhost ~]# cd /home/
 [root@localhost home]# mkdir http
-[root@localhost home]# chown cwc:cwc /home/http/
-
+[root@localhost home]# chown apache:apache /home/http/
+chmod 775 /home/http/
+chmod 775 /home/http/*

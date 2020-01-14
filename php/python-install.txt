@@ -1,3 +1,0 @@
-dnf install python3;
-dnf install python2;
-alternatives --set python /usr/bin/python3;
