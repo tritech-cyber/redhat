@@ -1,9 +1,15 @@
 https://linuxconfig.org/how-to-install-mod-ssl-on-redhat-8
-
+#install
+dnf install mod_ssl
+#enable
+apachectl -M | grep ssl
+#restart apache2
+systemctl restart apache2
+#create the key
 openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/httpd.key -x509 -days 365 -out /etc/pki/tls/certs/httpd.crt
-
+#list the keys to make sure they are there
 ls -l /etc/pki/tls/private/httpd.key /etc/pki/tls/certs/httpd.crt
-
+#Edit /etc/httpd/conf.d/ssl.conf 
 /etc/httpd/conf.d/ssl.conf file with administrative privileges and change the following lines:
 
 FROM:
@@ -14,7 +20,7 @@ SSLCertificateFile /etc/pki/tls/certs/httpd.crt
 SSLCertificateKeyFile /etc/pki/tls/private/httpd.key
 
 
-As an optional step redirect all HTTP traffic to HTTPS.
+ Redirect all HTTP traffic to HTTPS.
 
 T do so create a new file /etc/httpd/conf.d/redirect_http.conf with a following content:
 
