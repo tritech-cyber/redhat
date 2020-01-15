@@ -1,0 +1,31 @@
+<?php  
+// this is php  
+session_start();// start a session 
+$_SESSION['pagename'] = "io index";
+include "db/pushhits.php";
+// turn php off 
+?>
+
+<!DOCTYPE html><html><head><title>TITLE</title><link rel="stylesheet" type="text/css" href="css/style.css"></head>
+<body>
+<center><h1>
+HolaMundo <br />
+&nbsp;<a href = "pma/" > PMA </a>
+&nbsp;<a href = "data/"> DATA </a>
+&nbsp;<a href = "logs/"> LOGS </a>
+&nbsp;<a href = "downloads/"> DOWNLOADS </a>
+<hr />
+<?php
+echo $_SERVER['HTTP_HOST'];
+echo "&nbsp;";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br />";
+$output = shell_exec('cal');
+echo "<pre>$output</pre>";
+$output = shell_exec('date');
+echo "<pre>$output</pre>";
+?>
+</h1>
+</center>
+</body>
+</html> 
