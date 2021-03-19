@@ -1,0 +1,2 @@
+http://ftp.osuosl.org/pub/centos/8/BaseOS/x86_64/os/
+http://mirror.centos.org/centos/8/BaseOS/x86_64/os/
