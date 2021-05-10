@@ -1,0 +1,10 @@
+
+github error: unable to read askpass response from gnome-ssh-askpass
+# Root Cause
+$cat /etc/profile.d/gnome-ssh-askpass.sh
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass 
+
+# Fixed
+$unset SSH_ASKPASS
+then
+$git push origin master
