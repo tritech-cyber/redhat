@@ -1,0 +1,1 @@
+ssh -i rh210518.pem ec2-user@ec2-52-32-175-130.us-west-2.compute.amazonaws.com
