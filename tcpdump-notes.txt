@@ -1,3 +1,5 @@
 https://danielmiessler.com/study/tcpdump/
 
+https://linuxexplore.com/2012/06/07/use-tcpdump-to-capture-in-a-pcap-file-wireshark-dump/
+
 
